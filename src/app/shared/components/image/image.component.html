@@ -1,0 +1,10 @@
+<div class="app-img">
+  <picture *ngIf="imageUrls">
+    <source *ngIf="imageUrls.w2560" media="(min-width: 2560px)" [srcset]="imageUrls.w2560" />
+    <source *ngIf="imageUrls.w1920" media="(min-width: 1920px)" [srcset]="imageUrls.w1920" />
+    <source *ngIf="imageUrls.w1080" media="(min-width: 1080px)" [srcset]="imageUrls.w1080" />
+    <source *ngIf="imageUrls.w400" media="(min-width: 400px)" [srcset]="imageUrls.w400" />
+    <source *ngIf="imageUrls.w200" media="(min-width: 200px)" [srcset]="imageUrls.w200" />
+    <img [src]="imageUrls.w200" />
+  </picture>
+</div>

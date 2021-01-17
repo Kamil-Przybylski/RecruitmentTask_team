@@ -1,0 +1,25 @@
+<article>
+  <ng-container *ngIf="(membersDataState$ | async)?.isSuccess; else emptyState">
+    <h1 class="text-center app-text-main pb-4">
+      {{ title$ | async }}
+    </h1>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let member of members$ | async">
+        <div>
+          <app-image [imageUrls]="member.imageUrl"></app-image>
+        </div>
+        <div class="p-4">
+          <app-description [member]="member.block"></app-description>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</article>
+
+<ng-template #emptyState>
+  <app-empty-state
+    [isLoading]="(membersDataState$ | async)?.isLoading || false"
+    [message]="'No members'"
+  ></app-empty-state>
+</ng-template>

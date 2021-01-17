@@ -1,0 +1,6 @@
+<ng-container *ngIf="!isLoading">
+  <small class="app-text-main">{{ message }}</small>
+</ng-container>
+<ng-container *ngIf="isLoading">
+  <app-loading-spinner></app-loading-spinner>
+</ng-container>

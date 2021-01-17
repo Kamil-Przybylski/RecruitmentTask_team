@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./styles-variables.scss";
+@import "./styles-layout.scss";
+
+html,
+body {
+  height: 100%;
+  background-color: $bg-color;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+
+.app-text-main {
+  color: $main-color;
+}
+.app-text-second {
+  color: $second-color;
+}
+.app-text-grey {
+  color: $grey-color;
+}
+
+.app-img {
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.app-description {
+  .app-description__title {
+    color: $main-color;
+    font-weight: bold;
+    margin-top: 0rem;
+    margin-bottom: 0.25rem;
+  }
+  .app-description__desc {
+    color: $grey-color;
+    margin-top: 0.25rem;
+    margin-bottom: 2rem;
+  }
+  .app-description__link {
+    color: $second-color;
+    margin-top: 0rem;
+    margin-bottom: 0.25rem;
+  }
+  .app-description__text {
+    color: $grey-color;
+    margin-top: 0.25rem;
+    margin-bottom: 0rem;
+  }
+}
+
+.app-spinner {
+  border: 5px solid $lightgrey-color;
+  border-top: 5px solid $second-color;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 0.6s ease-in-out infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
